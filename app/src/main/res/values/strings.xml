@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">AiCreations</string>
+    <string name="app_button_topbar_back">back</string>
+
+    <string name="models_creation_aiModel_Stable_Diffusion">Stable Diffusion</string>
+
+    <string name="category__abstract_art">Abstract Art</string>
+        <string name="image_abstract_art_01_prompt">Create an image of a swirling vortex of colors.</string>
+        <string name="image_abstract_art_02_prompt">Design a geometric pattern with repeating shapes.</string>
+        <string name="image_abstract_art_03_prompt">Imagine a canvas filled with random splashes of paint.</string>
+        <string name="image_abstract_art_04_prompt">Paint a picture of a city skyline with bold, abstract lines.</string>
+        <string name="image_abstract_art_05_prompt">Create an image of a surreal landscape with floating objects.</string>
+        <string name="image_abstract_art_06_prompt">Design a collage of images with overlapping shapes and colors.</string>
+        <string name="image_abstract_art_07_prompt">Imagine a portrait with distorted features and abstract shapes.</string>
+        <string name="image_abstract_art_08_prompt">Paint a picture of a maze with twisting and turning paths.</string>
+        <string name="image_abstract_art_09_prompt">Create an image of a symmetrical pattern with intricate details.</string>
+        <string name="image_abstract_art_10_prompt">Design an abstract depiction of a natural scene, such as a sunset or mountain range.</string>
+
+    <string name="category__animal">Animal</string>
+        <string name="image_animal_01_prompt">Create an image of a majestic lion in the wild.</string>
+        <string name="image_animal_02_prompt">Generate a picture of a group of playful dolphins swimming in the ocean.</string>
+        <string name="image_animal_03_prompt">Produce an illustration of a cute puppy sleeping in a basket.</string>
+        <string name="image_animal_04_prompt">Design an artwork featuring a colorful bird with intricate feathers.</string>
+        <string name="image_animal_05_prompt">Make an image of a family of elephants walking through the savannah.</string>
+        <string name="image_animal_06_prompt">Create a scene of a group of monkeys playing in the trees.</string>
+        <string name="image_animal_07_prompt">Generate a picture of a whale breaching the surface of the ocean.</string>
+        <string name="image_animal_08_prompt">Produce an illustration of a flock of seagulls flying over the beach.</string>
+        <string name="image_animal_09_prompt">Design an artwork featuring a chameleon blending into its surroundings.</string>
+        <string name="image_animal_10_prompt">Make an image of a group of penguins huddled together in the snow.</string>
+
+
+
+
+</resources>
