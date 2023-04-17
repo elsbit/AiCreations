@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">AiCreations</string>
-    <string name="app_button_topbar_back">back</string>
+    <string name="app_topbar_button_back">back</string>
+    <string name="app_topbar_title_category">Category</string>
+    <string name="app_topbar_title_creations">Creations</string>
+    <string name="app_topbar_title_details">Details</string>
 
     <string name="models_creation_aiModel_Stable_Diffusion">Stable Diffusion</string>
 

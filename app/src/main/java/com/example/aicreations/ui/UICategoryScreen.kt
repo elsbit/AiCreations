@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.aicreations.model.Creation
+import com.example.aicreations.ui.utils.UiLayout
 
 private const val FIRST_CREATION = 0
 private const val TAG = "UICategoryScreen"
@@ -29,6 +30,7 @@ private const val TAG = "UICategoryScreen"
 @Composable
 fun CategoryList(
     uiState: AiCreationsUiState,
+    uiLayout: UiLayout,
     onCategoryTab: ((Creation) -> Unit),
     modifier: Modifier = Modifier
 ) {
@@ -47,6 +49,7 @@ fun CategoryList(
             CategoryListItem(
                 creation = currentCreation!!,
                 isSelected = currentCreation.categoryId==selectedCreation.categoryId,
+                uiLayout = uiLayout,
                 onCategoryTab = onCategoryTab,
             )
         }
@@ -59,6 +62,7 @@ fun CategoryList(
 fun CategoryListItem(
     creation: Creation,
     onCategoryTab: ((Creation) -> Unit),
+    uiLayout: UiLayout,
     isSelected: Boolean = false,
     modifier: Modifier = Modifier
 ) {
@@ -87,8 +91,11 @@ fun CategoryListItem(
                 contentDescription = stringResource(id = creation.descriptionId),
                 Modifier.fillMaxWidth(), contentScale = ContentScale.FillWidth,
                 colorFilter = when(!isSelected) {
-                    true -> ColorFilter.tint(color = Color.Gray, blendMode = BlendMode.Color)
-                    false -> null
+                    true -> when(uiLayout==UiLayout.COMPACT) {
+                        true -> null
+                        else -> ColorFilter.tint(color = Color.Gray, blendMode = BlendMode.Color)
+                    }
+                    else -> null
                 }
             )
             Text(
@@ -96,9 +103,7 @@ fun CategoryListItem(
                 modifier = Modifier.padding(start = 8.dp),
             )
         }
-
     }
-
 }
 
 @Preview(showBackground = true)
@@ -109,6 +114,7 @@ fun PreviewOfCategoryList() {
 
     CategoryList(
         uiState = uiState,
+        uiLayout = UiLayout.COMPACT,
         onCategoryTab = {}
     )
 }

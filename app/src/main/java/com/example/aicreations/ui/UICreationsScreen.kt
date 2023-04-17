@@ -23,18 +23,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.aicreations.model.Creation
-
-
-private const val FIRST_CREATION = 0
+import com.example.aicreations.ui.utils.UiLayout
 
 @Composable
 fun ContentList(
     uiState: AiCreationsUiState,
+    amountOfCells: Int = 2,
+    uiLayout: UiLayout,
     onCreationClicked: (Creation) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
+        columns = GridCells.Fixed(amountOfCells),
         verticalArrangement = Arrangement.spacedBy(6.dp),
         horizontalArrangement = Arrangement.spacedBy(2.dp),
         modifier = modifier
@@ -50,6 +50,7 @@ fun ContentList(
             ContentListItem(
                 creation = creation,
                 onCreationClicked = onCreationClicked,
+                uiLayout = uiLayout,
                 isSelected = selectedCreation == creation,
                 modifier = modifier
             )
@@ -62,13 +63,12 @@ fun ContentList(
 fun ContentListItem(
     creation: Creation,
     onCreationClicked: (Creation) -> Unit,
+    uiLayout: UiLayout,
     isSelected: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier,
-            //.wrapContentSize()
-            //.scale(1f)
         onClick = { onCreationClicked(creation) }
 
 
@@ -78,8 +78,12 @@ fun ContentListItem(
             contentDescription = stringResource(id = creation.descriptionId),
             modifier = Modifier,
             colorFilter = when(!isSelected) {
-                true -> ColorFilter.tint(color = Color.Gray, blendMode = BlendMode.Color)
-                false -> null
+                true -> when(uiLayout== UiLayout.COMPACT) {
+                    true -> null
+                    else -> ColorFilter.tint(color = Color.Gray, blendMode = BlendMode.Color)
+
+                }
+                false-> null
             },
             contentScale = ContentScale.Fit
         )
@@ -94,6 +98,7 @@ fun PreviewOfContentList() {
 
     ContentList(
         uiState = uiState,
+        uiLayout = UiLayout.COMPACT,
         onCreationClicked = {}
     )
 }
