@@ -34,9 +34,9 @@ private const val  TAG = "UI"
 @Composable
 fun AiCreationsUi(
     windowWidth: WindowWidthSizeClass,
+    modifier: Modifier = Modifier,
     viewModel: AiCreationsViewModel = viewModel(),
     navController: NavHostController = rememberNavController(),
-    modifier: Modifier = Modifier
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val uiState by viewModel.uiState.collectAsState()
@@ -89,7 +89,7 @@ fun AiCreationsUi(
                             //.width(200.dp)
                             .weight(0.2f)
                     )
-                    ContentList(
+                    CreationList(
                         uiState = uiState,
                         uiLayout = uiLayout,
                         amountOfCells = 1,
@@ -117,7 +117,7 @@ fun AiCreationsUi(
                         onCategoryTab = onCategoryTab,
                         modifier = Modifier.width(200.dp)
                     )
-                    ContentList(
+                    CreationList(
                         uiState = uiState,
                         uiLayout = uiLayout,
                         onCreationClicked = onCreationClicked,
@@ -153,7 +153,7 @@ fun AiCreationsUi(
                             modifier = Modifier.padding(innerPadding))
                     }
                     composable(route = AiCreationUiScreen.Creations.name) {
-                        ContentList(
+                        CreationList(
                             uiState = uiState,
                             uiLayout = uiLayout,
                             onCreationClicked = { creation ->

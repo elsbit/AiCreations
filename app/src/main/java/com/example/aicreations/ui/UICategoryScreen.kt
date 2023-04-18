@@ -1,5 +1,6 @@
 package com.example.aicreations.ui
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -54,7 +55,7 @@ fun CategoryList(
             )
         }
     }
-
+    Log.d(TAG,"List of Categories created!")
 }
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -63,8 +64,9 @@ fun CategoryListItem(
     creation: Creation,
     onCategoryTab: ((Creation) -> Unit),
     uiLayout: UiLayout,
-    isSelected: Boolean = false,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isSelected: Boolean = false
+
 ) {
     Card(
         modifier = modifier

@@ -31,6 +31,133 @@
         <string name="image_animal_09_prompt">Design an artwork featuring a chameleon blending into its surroundings.</string>
         <string name="image_animal_10_prompt">Make an image of a group of penguins huddled together in the snow.</string>
 
+    <string name="category__city">City</string>
+        <string name="image_city_01_prompt">Create an image of a bustling street in Tokyo at night.</string>
+        <string name="image_city_02_prompt">Generate an image of a quaint café in a Parisian alleyway.</string>
+        <string name="image_city_03_prompt">Design an image of a skyscraper-filled skyline in New York City.</string>
+        <string name="image_city_04_prompt">Produce an image of a busy marketplace in Marrakech, Morocco.</string>
+        <string name="image_city_05_prompt">Create an image of a traditional pagoda in the center of a Chinese city.</string>
+        <string name="image_city_06_prompt">Generate an image of a winding canal in Venice, Italy.</string>
+        <string name="image_city_07_prompt">Design an image of a futuristic cityscape with flying cars and neon lights.</string>
+        <string name="image_city_08_prompt">Produce an image of a colorful shanty town in Rio de Janeiro, Brazil.</string>
+        <string name="image_city_09_prompt">Create an image of a historic castle in Edinburgh, Scotland.</string>
+        <string name="image_city_10_prompt">Generate an image of a vibrant street festival in New Orleans, Louisiana.</string>
+        <string name="image_city_11_prompt">Create an image of a bustling street at night.</string>
+        <string name="image_city_12_prompt">Generate a picture of a modern skyscraper surrounded by greenery.</string>
+        <string name="image_city_13_prompt">Produce an illustration of a quiet alleyway in an old European city.</string>
+        <string name="image_city_14_prompt">Design an artwork featuring a futuristic city with flying cars.</string>
+        <string name="image_city_15_prompt">Make an image of a colorful street market filled with people and vendors.</string>
+        <string name="image_city_16_prompt">Create a scene of a cityscape at sunrise.</string>
+        <string name="image_city_17_prompt">Generate a picture of a grand city square with a fountain in the center.</string>
+        <string name="image_city_18_prompt">Produce an illustration of a bridge over a river with city buildings in the background.</string>
+        <string name="image_city_19_prompt">Design an artwork featuring a city skyline with a beautiful sunset in the background.</string>
+        <string name="image_city_20_prompt">Make an image of a city park with people relaxing and enjoying the scenery.</string>
+
+    <string name="category__desert">Desert</string>
+        <string name="image_desert_01_prompt">A lone camel standing on a sand dune with the sun setting behind it</string>
+        <string name="image_desert_02_prompt">A desert oasis with palm trees and a small lake</string>
+        <string name="image_desert_03_prompt">A majestic eagle soaring over the desert landscape</string>
+        <string name="image_desert_04_prompt">A group of Bedouin travelers on camels crossing the desert</string>
+        <string name="image_desert_05_prompt">A stunning rock formation in the middle of a desert valley</string>
+        <string name="image_desert_06_prompt">A beautiful sunrise over the desert with vibrant colors in the sky</string>
+        <string name="image_desert_07_prompt">A herd of wild horses running through the desert landscape</string>
+        <string name="image_desert_08_prompt">A panoramic view of a vast desert landscape with mountains in the distance</string>
+        <string name="image_desert_09_prompt">A hot air balloon floating over the desert at sunset</string>
+        <string name="image_desert_10_prompt">A caravan of traders traveling through the desert with their camels</string>
+
+    <string name="category__fantasy_creature">Fantasy Creature</string>
+        <string name="image_fantasy_creature_01_prompt">Create an image of a majestic dragon perched on a mountaintop.</string>
+        <string name="image_fantasy_creature_02_prompt">Design a creature that is half-mermaid and half-bird.</string>
+        <string name="image_fantasy_creature_03_prompt">Imagine a group of goblins raiding a human village.</string>
+        <string name="image_fantasy_creature_04_prompt">Paint a picture of a centaur galloping through a field of wildflowers.</string>
+        <string name="image_fantasy_creature_05_prompt">Create an image of a unicorn drinking from a crystal-clear stream.</string>
+        <string name="image_fantasy_creature_06_prompt">Design a fearsome sea monster lurking in the depths of the ocean.</string>
+        <string name="image_fantasy_creature_07_prompt">Imagine a phoenix soaring through the sky with fiery wings.</string>
+        <string name="image_fantasy_creature_08_prompt">Paint a picture of a griffin guarding a treasure trove.</string>
+        <string name="image_fantasy_creature_09_prompt">Create an image of a giant spider weaving an intricate web.</string>
+        <string name="image_fantasy_creature_10_prompt">Design a mystical creature that glows in the dark.</string>
+
+    <string name="category__food">Food</string>
+        <string name="image_food_01_prompt">Create an image of a mouth-watering pizza with all the toppings</string>
+        <string name="image_food_02_prompt">Generate a picture of a delicious ice cream sundae with chocolate syrup and whipped cream</string>
+        <string name="image_food_03_prompt">Produce an illustration of a colorful fruit platter with a variety of fruits</string>
+        <string name="image_food_04_prompt">Design an artwork featuring a decadent chocolate cake with frosting and decorations</string>
+        <string name="image_food_05_prompt">Make an image of a gourmet burger with fries and a milkshake</string>
+        <string name="image_food_06_prompt">Create a scene of a fancy sushi platter with chopsticks and soy sauce</string>
+        <string name="image_food_07_prompt">Generate a picture of a refreshing smoothie with colorful fruits and vegetables</string>
+        <string name="image_food_08_prompt">Produce an illustration of a cheese board with a variety of cheeses, crackers, and grapes</string>
+        <string name="image_food_09_prompt">Design an artwork featuring a steaming cup of hot cocoa with marshmallows</string>
+        <string name="image_food_10_prompt">Make an image of a classic breakfast spread with pancakes, bacon, and eggs</string>
+        <string name="image_food_11_prompt">Create an image of a juicy and perfectly grilled steak with charred marks and a garnish of fresh herbs</string>
+        <string name="image_food_12_prompt">Produce an illustration of a colorful salad with a variety of vegetables, fruits, and nuts, drizzled with a homemade vinaigrette dressing</string>
+        <string name="image_food_13_prompt">Design an artwork featuring a mouthwatering pizza with a thin and crispy crust, topped with tomato sauce, mozzarella cheese, and a variety of toppings</string>
+        <string name="image_food_14_prompt">Make an image of a plate of freshly made sushi rolls with delicate slices of raw fish, avocado, and cucumber, served with soy sauce and wasabi</string>
+        <string name="image_food_15_prompt">Generate a picture of a decadent chocolate cake with layers of rich ganache and fluffy chocolate frosting, topped with fresh berries</string>
+        <string name="image_food_16_prompt">Produce an illustration of a bowl of creamy and comforting mac and cheese with melted cheddar cheese and a crunchy breadcrumb topping</string>
+        <string name="image_food_17_prompt">Design an artwork featuring a plate of spicy and flavorful chicken wings with a side of blue cheese dressing and celery sticks</string>
+        <string name="image_food_18_prompt">Make an image of a fluffy and buttery croissant with a crispy exterior and a soft, flaky interior, perfect for a breakfast or snack</string>
+        <string name="image_food_19_prompt">Create a scene of a refreshing and colorful fruit smoothie with a blend of fresh berries, bananas, and yogurt</string>
+        <string name="image_food_20_prompt">Generate a picture of a hearty and warming bowl of ramen with a savory broth, tender noodles, and toppings like pork belly, soft-boiled egg, and green onions</string>
+
+    <string name="category__forest">Forest</string>
+        <string name="image_forest_01_prompt">A peaceful river flowing through a dense forest</string>
+        <string name="image_forest_02_prompt">A group of animals gathered at a watering hole in a forest clearing</string>
+        <string name="image_forest_03_prompt">A misty morning scene with sun rays shining through the trees</string>
+        <string name="image_forest_04_prompt">A wooden bridge over a tranquil stream in the forest</string>
+        <string name="image_forest_05_prompt">A majestic waterfall in the middle of a lush forest</string>
+        <string name="image_forest_06_prompt">A family of deer grazing in a clearing surrounded by trees</string>
+        <string name="image_forest_07_prompt">A campfire at night in the forest with the stars shining above</string>
+        <string name="image_forest_08_prompt">A colorful autumn forest with leaves of orange, red, and yellow</string>
+        <string name="image_forest_09_prompt">A serene lake nestled among tall trees in the forest</string>
+        <string name="image_forest_10_prompt">A beautiful sunset over the forest canopy</string>
+    
+    <string name="category__futuristic_city">Futuristic City</string>
+        <string name="image_futuristic_city_01_prompt">Create an image of a towering skyscraper with a holographic display.</string>
+        <string name="image_futuristic_city_02_prompt">Design a futuristic train system that spans across a cityscape.</string>
+        <string name="image_futuristic_city_03_prompt">Imagine a bustling metropolis with flying cars and hoverbikes.</string>
+        <string name="image_futuristic_city_04_prompt">Paint a picture of a sleek and modern city plaza.</string>
+        <string name="image_futuristic_city_05_prompt">Create an image of a towering geodesic dome enclosing a futuristic city.</string>
+        <string name="image_futuristic_city_06_prompt">Design a high-tech research facility in the heart of a city.</string>
+        <string name="image_futuristic_city_07_prompt">Imagine a network of underground tunnels connecting different parts of a city.</string>
+        <string name="image_futuristic_city_08_prompt">Paint a picture of a city skyline at night, lit up with neon lights.</string>
+        <string name="image_futuristic_city_09_prompt">Create an image of a space elevator reaching into the sky.</string>
+        <string name="image_futuristic_city_10_prompt">Design a floating city in the clouds.</string>
+    
+    <string name="category__landscape">Landscape</string>
+        <string name="image_landscape_01_prompt">Create an image of a serene lake surrounded by snow-capped mountains.</string>
+        <string name="image_landscape_02_prompt">Generate an image of a sun-drenched desert with a lone cactus in the foreground.</string>
+        <string name="image_landscape_03_prompt">Design an image of a lush rainforest with a waterfall cascading down the rocks.</string>
+        <string name="image_landscape_04_prompt">Produce an image of a misty forest with rays of sunlight peeking through the trees.</string>
+        <string name="image_landscape_05_prompt">Create an image of a rugged coastline with crashing waves and a lighthouse in the distance.</string>
+        <string name="image_landscape_06_prompt">Generate an image of a colorful autumn landscape with orange and yellow leaves.</string>
+        <string name="image_landscape_07_prompt">Design an image of a serene meadow with wildflowers in full bloom.</string>
+        <string name="image_landscape_08_prompt">Produce an image of a dramatic canyon with steep cliffs and a river running through.</string>
+        <string name="image_landscape_09_prompt">Create an image of a peaceful countryside with rolling hills and a farmhouse.</string>
+        <string name="image_landscape_10_prompt">Generate an image of a frozen tundra with snow-covered trees and a distant mountain range.</string>
+        <string name="image_landscape_11_prompt">Create an image of a serene mountain lake surrounded by trees.</string>
+        <string name="image_landscape_12_prompt">Generate a picture of a beautiful waterfall cascading down rocks.</string>
+        <string name="image_landscape_13_prompt">Produce an illustration of a desert landscape with a setting sun.</string>
+        <string name="image_landscape_14_prompt">Design an artwork featuring a colorful autumn forest with falling leaves.</string>
+        <string name="image_landscape_15_prompt">Make an image of a vast savannah with wildlife roaming free.</string>
+        <string name="image_landscape_16_prompt">Create a scene of a beach with crystal clear water and white sand.</string>
+        <string name="image_landscape_17_prompt">Generate a picture of a majestic glacier with snow-capped mountains in the background.</string>
+        <string name="image_landscape_18_prompt">Produce an illustration of a dense jungle with a hidden temple.</string>
+        <string name="image_landscape_19_prompt">Design an artwork featuring a snow-covered forest with a cozy cabin.</string>
+        <string name="image_landscape_20_prompt">Make an image of a peaceful countryside with rolling hills and farmland.</string>
+    
+    <string name="category__science_fiction">Science Fiction</string>
+        <string name="image_science_fiction_01_prompt">Create an image of a spaceship hovering over a futuristic city.</string>
+        <string name="image_science_fiction_02_prompt">Generate an image of an alien planet with strange creatures and unusual plants.</string>
+        <string name="image_science_fiction_03_prompt">Design an image of a group of astronauts exploring a distant planet.</string>
+        <string name="image_science_fiction_04_prompt">Produce an image of a high-tech laboratory with advanced equipment and robotic assistants.</string>
+        <string name="image_science_fiction_05_prompt">Create an image of a dystopian future with a ruined city and desolate landscape.</string>
+        <string name="image_science_fiction_06_prompt">Generate an image of a sleek hovercar speeding down a neon-lit street.</string>
+        <string name="image_science_fiction_07_prompt">Design an image of a space station orbiting a distant planet.</string>
+        <string name="image_science_fiction_08_prompt">Produce an image of a cybernetic creature in a futuristic laboratory.</string>
+        <string name="image_science_fiction_09_prompt">Create an image of a battle between robots and humans in a futuristic city.</string>
+        <string name="image_science_fiction_10_prompt">Generate an image of a futuristic cityscape with towering skyscrapers and flying cars.</string>
+
+
 
 
 

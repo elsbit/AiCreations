@@ -26,12 +26,12 @@ import com.example.aicreations.model.Creation
 import com.example.aicreations.ui.utils.UiLayout
 
 @Composable
-fun ContentList(
+fun CreationList(
     uiState: AiCreationsUiState,
-    amountOfCells: Int = 2,
     uiLayout: UiLayout,
     onCreationClicked: (Creation) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    amountOfCells: Int = 2,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(amountOfCells),
@@ -44,10 +44,10 @@ fun ContentList(
 
     ) {
         val currentCreationCategory = uiState.currentCategory
-        val currentCreations = uiState.creations.get(currentCreationCategory)!!
+        val currentCreations = uiState.creations[currentCreationCategory]!!
         val selectedCreation = uiState.currentCreation
         items(currentCreations) { creation ->
-            ContentListItem(
+            CreationListItem(
                 creation = creation,
                 onCreationClicked = onCreationClicked,
                 uiLayout = uiLayout,
@@ -60,17 +60,17 @@ fun ContentList(
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ContentListItem(
+fun CreationListItem(
     creation: Creation,
     onCreationClicked: (Creation) -> Unit,
     uiLayout: UiLayout,
-    isSelected: Boolean = false,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isSelected: Boolean = false
+
 ) {
     Card(
         modifier = modifier,
         onClick = { onCreationClicked(creation) }
-
 
     ) {
         Image(
@@ -92,11 +92,11 @@ fun ContentListItem(
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewOfContentList() {
+fun PreviewOfCreationList() {
     val viewModel: AiCreationsViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
 
-    ContentList(
+    CreationList(
         uiState = uiState,
         uiLayout = UiLayout.COMPACT,
         onCreationClicked = {}
