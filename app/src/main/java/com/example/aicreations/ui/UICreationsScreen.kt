@@ -2,6 +2,8 @@ package com.example.aicreations.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -12,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -35,11 +36,11 @@ fun CreationList(
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(amountOfCells),
-        verticalArrangement = Arrangement.spacedBy(6.dp),
+        verticalArrangement = Arrangement.spacedBy(2.dp),
         horizontalArrangement = Arrangement.spacedBy(2.dp),
         modifier = modifier
             .wrapContentSize()
-            .scale(1f)
+            //.scale(1f)
 
 
     ) {
@@ -69,14 +70,17 @@ fun CreationListItem(
 
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier
+            .aspectRatio(ratio = 1f),
         onClick = { onCreationClicked(creation) }
 
     ) {
         Image(
             painter = painterResource(id = creation.imageId),
             contentDescription = stringResource(id = creation.descriptionId),
-            modifier = Modifier,
+            modifier = Modifier
+                .fillMaxSize(),
+            //changes the tint of image if unselected; do nothing in compact layout
             colorFilter = when(!isSelected) {
                 true -> when(uiLayout== UiLayout.COMPACT) {
                     true -> null
@@ -85,7 +89,7 @@ fun CreationListItem(
                 }
                 false-> null
             },
-            contentScale = ContentScale.Fit
+            contentScale = ContentScale.Crop
         )
     }
 }

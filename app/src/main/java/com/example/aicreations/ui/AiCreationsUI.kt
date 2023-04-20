@@ -2,11 +2,11 @@ package com.example.aicreations.ui
 
 import android.util.Log
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Scaffold
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -25,8 +25,8 @@ import com.example.aicreations.ui.utils.UiLayout
 
 enum class AiCreationUiScreen(@StringRes val title: Int) {
     Category(title =  R.string.app_topbar_title_compact_category),
-    Creations(title = R.string.app_topbar_title_compact_category),
-    Details(title = R.string.app_topbar_title_compact_category)
+    Creations(title = R.string.app_topbar_title_compact_creations),
+    Details(title = R.string.app_topbar_title_compact_details)
 }
 
 private const val  TAG = "UI"
@@ -63,22 +63,21 @@ fun AiCreationsUi(
         viewModel.updateCurrentCreation(creation)
     }
 
-    Scaffold(
-        topBar = {
-            AiCreationsUiTopBar(
-                onBackButtonClicked = { navController.navigateUp() },
-                uiLayout = uiLayout,
-                currentScreen = currentScreen,
-                canNavigateBack = navController.previousBackStackEntry != null
-            )
-        }
-    ) { innerPadding ->
+
+    Column() {
+        Topbar(
+            currentScreen = currentScreen,
+            uiLayout = uiLayout,
+            onBackButtonClicked = { navController.navigateUp() },
+            canNavigateBack = navController.previousBackStackEntry != null,
+            modifier = modifier.height(80.dp)
+        )
         when(uiLayout) {
             //MEDIUM ORIENTATION
             UiLayout.MEDIUM -> {
                 Row(
-                    modifier = Modifier.fillMaxSize()
-
+                    modifier = Modifier
+                        .fillMaxSize()
                 ) {
                     CategoryList(
                         uiState = uiState,
@@ -95,26 +94,26 @@ fun AiCreationsUi(
                         onCreationClicked = onCreationClicked,
                         modifier = Modifier
                             .weight(0.3f)
-                        //.width(400.dp)
                     )
                     DetailScreen(
                         uiState = uiState,
-                        modifier = Modifier
-                            .weight(0.5f)
+                        uiLayout = uiLayout,
+                        //.weight(0.5f)
                     )
                 }
             }
             //EXPANDED ORIENTATION
             UiLayout.EXPANDED -> {
                 Row(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize()//.padding(innerPadding)
 
                 ) {
                     CategoryList(
                         uiState = uiState,
                         uiLayout = uiLayout,
                         onCategoryTab = onCategoryTab,
-                        modifier = Modifier.width(200.dp)
+                        modifier = Modifier
+                            .width(200.dp)
                     )
                     CreationList(
                         uiState = uiState,
@@ -122,10 +121,11 @@ fun AiCreationsUi(
                         onCreationClicked = onCreationClicked,
                         modifier = Modifier
                             .weight(0.3f)
-                            //.width(400.dp)
+                        //.width(400.dp)
                     )
                     DetailScreen(
                         uiState = uiState,
+                        uiLayout = uiLayout,
                         modifier = Modifier
                             .weight(0.5f)
                     )
@@ -136,7 +136,7 @@ fun AiCreationsUi(
                 NavHost(
                     navController = navController,
                     startDestination = AiCreationUiScreen.Category.name,
-                    modifier = modifier.padding(innerPadding)
+                    modifier = modifier
                 ) {
                     composable(
                         route = AiCreationUiScreen.Category.name
@@ -149,7 +149,8 @@ fun AiCreationsUi(
                                 navController.navigate(AiCreationUiScreen.Creations.name)
                             },
                             uiLayout = uiLayout,
-                            modifier = Modifier.padding(innerPadding))
+                            modifier = Modifier
+                        )
                     }
                     composable(route = AiCreationUiScreen.Creations.name) {
                         CreationList(
@@ -159,11 +160,15 @@ fun AiCreationsUi(
                                 Log.d(TAG,"Tab pressed: ID: "+creation.categoryId)
                                 viewModel.updateCurrentCreation(creation)
                                 navController.navigate(AiCreationUiScreen.Details.name)
-                            } )
+                            },
+                            modifier = Modifier
+
+                        )
                     }
                     composable(route = AiCreationUiScreen.Details.name) {
                         DetailScreen(
-                            uiState = uiState
+                            uiState = uiState,
+                            uiLayout = uiLayout,
                         )
                     }
                 }
