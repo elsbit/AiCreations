@@ -24,9 +24,9 @@ import com.example.aicreations.model.Creation
 import com.example.aicreations.ui.utils.UiLayout
 
 enum class AiCreationUiScreen(@StringRes val title: Int) {
-    Category(title =  R.string.app_topbar_title_category),
-    Creations(title = R.string.app_topbar_title_creations),
-    Details(title = R.string.app_topbar_title_details)
+    Category(title =  R.string.app_topbar_title_compact_category),
+    Creations(title = R.string.app_topbar_title_compact_category),
+    Details(title = R.string.app_topbar_title_compact_category)
 }
 
 private const val  TAG = "UI"
@@ -44,7 +44,7 @@ fun AiCreationsUi(
         backStackEntry?.destination?.route ?: AiCreationUiScreen.Category.name
     )
 
-    //Device orientation implementation
+    //Device orientation
     val uiLayout: UiLayout = when(windowWidth) {
         WindowWidthSizeClass.Compact -> UiLayout.COMPACT
         WindowWidthSizeClass.Medium -> UiLayout.MEDIUM
@@ -58,7 +58,6 @@ fun AiCreationsUi(
         viewModel.updateCurrentCreation(creation)
     }
 
-    // TODO onCreationClicked -> show details of Creations
     val onCreationClicked:(Creation) -> Unit = {creation ->
         Log.d(TAG,"Creation pressed: ID: "+creation.imageId)
         viewModel.updateCurrentCreation(creation)

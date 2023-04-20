@@ -2,6 +2,7 @@ package com.example.aicreations.ui
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -16,14 +17,20 @@ import com.example.aicreations.ui.utils.UiLayout
 @Composable
 fun AiCreationsUiTopBar(
     currentScreen: AiCreationUiScreen,
-    onBackButtonClicked: () -> Unit,
     uiLayout: UiLayout,
+    onBackButtonClicked: () -> Unit,
     modifier: Modifier = Modifier,
     canNavigateBack: Boolean = false
 ) {
     TopAppBar(
         title = {
-            Text(stringResource(id = currentScreen.title))
+            Text(
+                text = when(uiLayout) {
+                    UiLayout.COMPACT -> stringResource(id = currentScreen.title)
+                    else -> stringResource(id = R.string.app_topbar_title)
+                },
+                style = MaterialTheme.typography.h1
+            )
         },
         navigationIcon = {
             if(canNavigateBack) {
@@ -44,7 +51,7 @@ fun AiCreationsUiTopBar(
 @Composable
 fun PreviewOfTopBar() {
     AiCreationsUiTopBar(
-        onBackButtonClicked = { /*TODO*/ },
+        onBackButtonClicked = { /*Nothing, just a Preview*/ },
         uiLayout = UiLayout.COMPACT,
         canNavigateBack = false,
         currentScreen = AiCreationUiScreen.Category

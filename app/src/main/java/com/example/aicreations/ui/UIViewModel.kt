@@ -27,7 +27,7 @@ class AiCreationsViewModel : ViewModel() {
 data class AiCreationsUiState(
     val creations: Map<Int,List<Creation>>,
     val currentCategory: Int = Datasource.defaultCategory,
-    //val currentCreations: List<Creation>, TODO Remove?
+    //val currentCreations: List<Creation>, TODO Remove? currently nit used
     val currentCreation: Creation = Datasource.defaultCreation
 
 ) {
