@@ -53,7 +53,7 @@ fun AiCreationsUi(
     }
 
     // update current Category; only used in expanded and medium layout
-    val onCategoryTab:(Creation) -> Unit  = {creation ->
+    val onCategoryClicked:(Creation) -> Unit  = { creation ->
         Log.d(TAG,"Tab pressed: ID: "+creation.categoryId)
         viewModel.updateCurrentCreation(creation)
     }
@@ -81,7 +81,7 @@ fun AiCreationsUi(
                 ) {
                     CategoryList(
                         uiState = uiState,
-                        onCategoryTab = onCategoryTab,
+                        onCategoryTab = onCategoryClicked,
                         uiLayout = uiLayout,
                         modifier = Modifier
                             //.width(200.dp)
@@ -111,7 +111,7 @@ fun AiCreationsUi(
                     CategoryList(
                         uiState = uiState,
                         uiLayout = uiLayout,
-                        onCategoryTab = onCategoryTab,
+                        onCategoryTab = onCategoryClicked,
                         modifier = Modifier
                             .width(200.dp)
                     )
