@@ -52,7 +52,6 @@ fun AiCreationsUi(
         else -> UiLayout.COMPACT
     }
 
-    // update current Category; only used in expanded and medium layout
     val onCategoryClicked:(Creation) -> Unit  = { creation ->
         Log.d(TAG,"Tab pressed: ID: "+creation.categoryId)
         viewModel.updateCurrentCreation(creation)
@@ -63,7 +62,6 @@ fun AiCreationsUi(
         viewModel.updateCurrentCreation(creation)
     }
 
-
     Column() {
         Topbar(
             currentScreen = currentScreen,
@@ -73,107 +71,128 @@ fun AiCreationsUi(
             modifier = modifier.height(80.dp)
         )
         when(uiLayout) {
-            //MEDIUM ORIENTATION
             UiLayout.MEDIUM -> {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) {
-                    CategoryList(
-                        uiState = uiState,
-                        onCategoryTab = onCategoryClicked,
-                        uiLayout = uiLayout,
-                        modifier = Modifier
-                            //.width(200.dp)
-                            .weight(0.2f)
-                    )
-                    CreationList(
-                        uiState = uiState,
-                        uiLayout = uiLayout,
-                        amountOfCells = 1,
-                        onCreationClicked = onCreationClicked,
-                        modifier = Modifier
-                            .weight(0.3f)
-                    )
-                    DetailScreen(
-                        uiState = uiState,
-                        uiLayout = uiLayout,
-                        //.weight(0.5f)
-                    )
-                }
-            }
-            //EXPANDED ORIENTATION
-            UiLayout.EXPANDED -> {
-                Row(
-                    modifier = Modifier.fillMaxSize()//.padding(innerPadding)
-
-                ) {
-                    CategoryList(
-                        uiState = uiState,
-                        uiLayout = uiLayout,
-                        onCategoryTab = onCategoryClicked,
-                        modifier = Modifier
-                            .width(200.dp)
-                    )
-                    CreationList(
-                        uiState = uiState,
-                        uiLayout = uiLayout,
-                        onCreationClicked = onCreationClicked,
-                        modifier = Modifier
-                            .weight(0.3f)
-                        //.width(400.dp)
-                    )
-                    DetailScreen(
-                        uiState = uiState,
-                        uiLayout = uiLayout,
-                        modifier = Modifier
-                            .weight(0.5f)
-                    )
-                }
-            }
-            //COMPACT ORIENTATION
-            else -> {
-                NavHost(
-                    navController = navController,
-                    startDestination = AiCreationUiScreen.Category.name,
+                MediumOrientation(
+                    uiState = uiState,
+                    onCategoryClicked = onCategoryClicked,
+                    onCreationClicked = onCreationClicked,
                     modifier = modifier
-                ) {
-                    composable(
-                        route = AiCreationUiScreen.Category.name
-                    ) {
-                        CategoryList(
-                            uiState = uiState,
-                            onCategoryTab = {creation ->
-                                Log.d(TAG,"Tab pressed: ID: "+creation.categoryId)
-                                viewModel.updateCurrentCreation(creation)
-                                navController.navigate(AiCreationUiScreen.Creations.name)
-                            },
-                            uiLayout = uiLayout,
-                            modifier = Modifier
-                        )
-                    }
-                    composable(route = AiCreationUiScreen.Creations.name) {
-                        CreationList(
-                            uiState = uiState,
-                            uiLayout = uiLayout,
-                            onCreationClicked = { creation ->
-                                Log.d(TAG,"Tab pressed: ID: "+creation.categoryId)
-                                viewModel.updateCurrentCreation(creation)
-                                navController.navigate(AiCreationUiScreen.Details.name)
-                            },
-                            modifier = Modifier
-
-                        )
-                    }
-                    composable(route = AiCreationUiScreen.Details.name) {
-                        DetailScreen(
-                            uiState = uiState,
-                            uiLayout = uiLayout,
-                        )
-                    }
-                }
+                )
+            }
+            UiLayout.EXPANDED -> {
+                ExpandedOrientation(
+                    uiState = uiState,
+                    onCategoryClicked = onCategoryClicked,
+                    onCreationClicked = onCreationClicked,
+                    modifier = modifier
+                )
+            }
+            UiLayout.COMPACT -> {
+                CompactOrientation(
+                    navController = navController,
+                    uiState = uiState,
+                    onCategoryClicked = { creation ->
+                        onCategoryClicked(creation)
+                        navController.navigate(AiCreationUiScreen.Creations.name)
+                    },
+                    onCreationClicked = { creation ->
+                        onCategoryClicked(creation)
+                            .also { navController.navigate(AiCreationUiScreen.Details.name) }
+                            // Test: found this in code preview TODO: remove/change Test
+                    },
+                    modifier = modifier
+                )
             }
         }
+    }
+}
+
+@Composable
+private fun CompactOrientation(
+    navController: NavHostController,
+    uiState: AiCreationsUiState,
+    onCategoryClicked: (Creation) -> Unit,
+    onCreationClicked: (Creation) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    NavHost(
+        navController = navController,
+        startDestination = AiCreationUiScreen.Category.name,
+        modifier = modifier
+    ) {
+        composable(
+            route = AiCreationUiScreen.Category.name
+        ) {
+            CategoryList(
+                uiState = uiState,
+                onCategoryClicked = onCategoryClicked,
+                uiLayout = UiLayout.COMPACT,
+                modifier = Modifier
+            )
+        }
+        composable(route = AiCreationUiScreen.Creations.name) {
+            CreationList(
+                uiState = uiState,
+                uiLayout = UiLayout.COMPACT,
+                onCreationClicked = onCreationClicked,
+                modifier = Modifier
+
+            )
+        }
+        composable(route = AiCreationUiScreen.Details.name) {
+            DetailScreen(
+                uiState = uiState,
+                uiLayout = UiLayout.COMPACT,
+            )
+        }
+    }
+}
+@Composable
+private fun MediumOrientation(
+    uiState: AiCreationsUiState,
+    onCategoryClicked: (Creation) -> Unit,
+    onCreationClicked: (Creation) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    ExpandedOrientation(
+        uiState = uiState,
+        onCategoryClicked = onCategoryClicked,
+        onCreationClicked = onCreationClicked,
+        modifier = modifier
+    )
+}
+
+@Composable
+private fun ExpandedOrientation(
+    uiState: AiCreationsUiState,
+    onCategoryClicked: (Creation) -> Unit,
+    onCreationClicked: (Creation) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = Modifier.fillMaxSize()//.padding(innerPadding)
+
+    ) {
+        CategoryList(
+            uiState = uiState,
+            uiLayout = UiLayout.EXPANDED,
+            onCategoryClicked = onCategoryClicked,
+            modifier = modifier
+                .width(200.dp)
+        )
+        CreationList(
+            uiState = uiState,
+            uiLayout = UiLayout.EXPANDED,
+            onCreationClicked = onCreationClicked,
+            modifier = modifier
+                .weight(0.3f)
+        )
+        DetailScreen(
+            uiState = uiState,
+            uiLayout = UiLayout.EXPANDED,
+            modifier = modifier
+                .weight(0.5f)
+        )
     }
 }
 
