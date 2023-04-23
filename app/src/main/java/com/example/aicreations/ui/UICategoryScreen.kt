@@ -32,7 +32,7 @@ private const val TAG = "UICategoryScreen"
 fun CategoryList(
     uiState: AiCreationsUiState,
     uiLayout: UiLayout,
-    onCategoryTab: ((Creation) -> Unit),
+    onCategoryClicked: ((Creation) -> Unit),
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
@@ -51,7 +51,7 @@ fun CategoryList(
                 creation = currentCreation!!,
                 isSelected = currentCreation.categoryId==selectedCreation.categoryId,
                 uiLayout = uiLayout,
-                onCategoryTab = onCategoryTab,
+                onCategoryTab = onCategoryClicked,
             )
         }
     }
@@ -117,6 +117,6 @@ fun PreviewOfCategoryList() {
     CategoryList(
         uiState = uiState,
         uiLayout = UiLayout.COMPACT,
-        onCategoryTab = {}
+        onCategoryClicked = {}
     )
 }
