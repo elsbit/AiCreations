@@ -23,10 +23,19 @@ import com.example.aicreations.R
 import com.example.aicreations.model.Creation
 import com.example.aicreations.ui.utils.UiLayout
 
-enum class AiCreationUiScreen(@StringRes val title: Int) {
-    Category(title =  R.string.app_topbar_title_compact_category),
-    Creations(title = R.string.app_topbar_title_compact_creations),
-    Details(title = R.string.app_topbar_title_compact_details)
+enum class AiCreationUiScreen(@StringRes val title: Int, @StringRes val info: Int) {
+    Category(
+        title =  R.string.app_topbar_title_compact_category,
+        info = R.string.app_topbar_information_category
+    ),
+    Creations(
+        title = R.string.app_topbar_title_compact_creations,
+        info = R.string.app_topbar_information_creations
+    ),
+    Details(
+        title = R.string.app_topbar_title_compact_details,
+        info = R.string.app_topbar_information_details
+    )
 }
 
 private const val  TAG = "UI"
@@ -68,7 +77,7 @@ fun AiCreationsUi(
             uiLayout = uiLayout,
             onBackButtonClicked = { navController.navigateUp() },
             canNavigateBack = navController.previousBackStackEntry != null,
-            modifier = modifier.height(80.dp)
+            //modifier = modifier.height(80.dp)
         )
         when(uiLayout) {
             UiLayout.MEDIUM -> {

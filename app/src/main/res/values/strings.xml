@@ -5,6 +5,11 @@
     <string name="app_topbar_title_compact_creations">Creations</string>
     <string name="app_topbar_title_compact_details">Details</string>
     <string name="app_topbar_title">a selection of artificially created images</string>
+    <string name="app_topbar_information">show information</string>
+    <string name="app_topbar_information_category">click on a category below to view a list of creations</string>
+    <string name="app_topbar_information_creations">click on a creation below to view details</string>
+    <string name="app_topbar_information_details"></string>
+
 
     <string name="models_creation_aiModel_Stable_Diffusion">Stable Diffusion</string>
 
